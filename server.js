@@ -1,4 +1,3 @@
-
 var express = require('express'),
     path = require('path'),
     app = express();
@@ -10,7 +9,7 @@ app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] })
 
 
 //set the port
-app.set('port', 3000);
+app.set('port', 80);
 
 
 // routes to serve the static HTML files
@@ -28,10 +27,6 @@ app.get('/contact', function (req, res) {
 app.get('/careers', function (req, res) {
     res.sendfile('./careers.html');
 });
-
-//tell express that we want to use the www folder
-//for our static assets
-// app.use(express.static(path.join(__dirname, '../www')));
 
 // Listen for requests
 var server = app.listen(app.get('port'), function () {
